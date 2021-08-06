@@ -1,0 +1,135 @@
+:root {
+    box-sizing: border-box;
+    font-size: calc(1vw + 1.5em);
+    --black: rgba(213, 226, 225, 1);
+    background-image: url(/images/greenboard.jpg);
+    background-size: cover;
+    
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+.main {
+    font-family: 'Indie Flower', sans-serif;
+    height: 100vh;  
+}
+
+.main__container {
+    text-align: center;
+}
+
+.main__container > h2 {
+    font-family: 'Lobster Two', serif ;
+    font-size: 2em;
+    color: var(--black);
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    margin: 0.7em 0;
+}
+
+.scoreboard__title {
+    text-transform: capitalize;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.scoreboard__score {
+    width: 20em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score__human,
+.score__computer {
+    line-height: 3;
+    margin-right: 0;
+}
+
+
+.scoreboard__score img {
+    height: 3em;
+    width: 3em;
+}
+
+
+
+
+.display-choice {
+    width: 20em;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.display-human {
+    background-image: url(/images/question.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3em;
+    height: 3em;  
+}
+
+.display-computer {
+    background-image: url(/images/question.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3em;
+    height: 3em;  
+}
+
+.scissor {
+    background-image: url(/images/scissor.png);
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    background-position: -1.5em -1em;
+}
+
+.rock {
+    background-image: url(/images/rock.png);
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    background-position: -1.5em -1em;
+}
+
+.paper {
+    background-image: url(/images/paper1.png);
+    background-size: 150% 100%;
+    background-repeat: no-repeat;
+    background-position: -1em 0.5em;
+}
+
+.x {
+    align-self: center;
+    font-size: 2.5em;
+}
+
+.user-input-container {
+    max-width: 1080px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    padding: 1em;
+    text-transform: uppercase;
+    color: black;
+    border-radius: 1em;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: rgb(68, 163, 85);
+    background-image: url(images/chalkboardwhite.jpg);
+    opacity: 0.7;
+    background-blend-mode: soft-light;
+}
+

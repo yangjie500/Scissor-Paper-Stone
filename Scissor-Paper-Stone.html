@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Scissory-Paper_Stone</title>
-    <meta charset="UTF-8">
-</head>
+    <head>
+      <meta charset="UTF-8">
+        <title>Scissory_Paper_Stone</title>
+        <link rel="stylesheet" href="/normalize.css">
+        <link rel="stylesheet" href="/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    </head>
 
-<body>
-    <script src="game_logic.js"></script>
-</body>
+    <body>
+        <main class="main">
+            <div class="main__container">
+                <h2>Rock Paper Scissor</h2>
+                <div class="scoreboard">
+                    <div class="scoreboard__title">
+                        score
+                    </div>
+                    <div class="scoreboard__score">
+                        <img class="img--hum" src="images/human (1).png">
+                        <div class="score__human">Human: <span class="hum">0</span></div>
+                        <div class="score__computer">computer: <span class="com">0</span></div>
+                        <img class="img--com" src="images/computer.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="display-choice">
+                <div class="display-human"></div>
+                <div class='x'>X</div>
+                <div class="display-computer"></div>
+            </div>
+
+            <div class="user-input-container">
+                    <button class="btn-rock">rock!!!</button>
+                    <button class="btn-paper">paper!!!</button>
+                    <button class="btn-scissor">scissor!!!</button>
+            </div>
+        </main>
+        <script src="game_logic.js"></script>
+    </body>
 
 
 
