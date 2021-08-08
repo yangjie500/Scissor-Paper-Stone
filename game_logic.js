@@ -39,14 +39,61 @@ function updateScore(result) {
 }
 
 function checkWin() {
-    let yourScore = document.querySelector('.hum')
-    let hisScore = document.querySelector('.com')
+    let yourScore = document.querySelector('.hum');
+    let hisScore = document.querySelector('.com');
+    let modal = document.querySelector('.modal-backdrop');
+    let replay = document.querySelector('#again');
 
     if (yourScore.textContent ===  '5') {
-        console.log('You win');
+        modal.style.display = 'block';
+        modal.nextElementSibling.style.display = 'block';
+        modal.nextElementSibling.children[1].textContent = 'YOU WIN!!!';
+
     } else if (hisScore.textContent === '5') {
-        console.log('You lose');
+        modal.style.display = 'block';
+        modal.nextElementSibling.style.display = 'block';
+        modal.nextElementSibling.children[1].textContent = 'YOU LOSE!!!';
     }
+
+    replay.addEventListener('click', resetGame);
+
+}
+
+function resetGame() {
+    const yourScore = document.querySelector('.hum');
+    const hisScore = document.querySelector('.com');
+    const modal = document.querySelector('.modal-backdrop');
+
+    yourScore.textContent =  0;
+    hisScore.textContent =  0;
+
+    modal.style.display = 'none';
+    modal.nextElementSibling.style.display = 'none';
+
+    // Remove Extra Div
+    const tempDiv = document.querySelectorAll('.temp');
+    for (let i of tempDiv) {
+        i.remove();
+    }
+
+}
+
+function random(length) {
+    return Math.random() * (length - 150)
+}
+
+function CreateRandomDiv(result) {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const div = document.createElement('div');
+    const main = document.querySelector('main');
+
+    div.className = 'temp'
+    div.style.cssText = `position: absolute; top: ${random(height)}px; left: ${random(width)}px;
+                         color:white; font-size:1.5em; transform: rotate(${random(360)}deg)`
+    div.textContent = result;
+    main.appendChild(div);
+    
 }
 
 (function game() {
@@ -75,20 +122,18 @@ function checkWin() {
         computerScore.classList.add(computerPlay());
     })
     
-    const group = document.querySelectorAll('button');
+    const group = document.querySelectorAll('.btn-rock, .btn-scissor, .btn-paper');
     for (let i=0; i<group.length; i++) {
         group[i].addEventListener('click', function(e) {
             let playerSelection = e.target.className.substring(4);
             let computerSelection = computerScore.className.split(' ')[1];
             let result = playResult(playerSelection, computerSelection);
+
             updateScore(result);
             checkWin();
+
+            // Extra
+            CreateRandomDiv(result);
         })
-    }
+    };
 })();
-
-
-
-
-
-
